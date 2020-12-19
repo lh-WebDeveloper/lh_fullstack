@@ -4,9 +4,8 @@ const app = getApp()
 
 Page({
   data: {
-    // 设置一个默认位置，如果没打开手机定位
-    longitude:116.279767,
-    latitude:40.046512,
+    longitude: 116.403901,
+    latitude: 39.915241,
   },
   //事件处理函数
   bindViewTap: function() {
@@ -15,20 +14,21 @@ Page({
     })
   },
   onLoad: function () {
-    // console.log('地图组件加载完成了，期待经纬度');
+    // console.log('地图组件加载完成了,期待经纬度获取')
     wx.getLocation({
       type:'gcj02',
-      success:(res)=>{
-        let longitude=res.longitude;
-        let latitude=res.latitude;
+      success:(res) =>{
+        let longitude = res.longitude;
+        let latitude = res.latitude;
         console.log(latitude, longitude)
-        // 在wxml模板里有写一个{{latitude}}来获取当前值
-        this.setData({
-          longitude:longitude,
-          latitude:latitude
+        // 在xml 模板里，
+        this.setData ({
+          longitude: longitude,
+          latitude: latitude
         })
       }
     })
+  
   },
   toScan() {
     // console.log('toScan');
@@ -39,15 +39,13 @@ Page({
         //   title:'二维码',
         //   content: JSON.stringify(res)
         // })
-        let id =res.result;
+        let id = res.result;
         wx.navigateTo({
-          url:'../unlock/unlock?id=${id}'
+          url: '/pages/unlock/unlock?id={$id}',
         })
-  
       }
     })
   },
-
   getUserInfo: function(e) {
     console.log(e)
     app.globalData.userInfo = e.detail.userInfo

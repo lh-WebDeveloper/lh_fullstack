@@ -10,18 +10,18 @@ page {
   flex: 1;
 }
 .main-btn {
-  background-color: #ffffff;
+  background-color: #fff;
   padding: 20rpx;
 }
 .main-text {
   height: 100rpx;
   margin: 0 auto;
-  color: #ffffff;
+  color:#fff;
   background-color: #4a4c5b;
   font-size: 32rpx;
   border-radius: 4rpx;
-  display:flex;
+  display: flex;
   justify-content: center;
-  align-items:center;
+  align-items: center;
   text-align: center;
 }
