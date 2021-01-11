@@ -1,0 +1,11 @@
+nBgc(num)
+    for i in i..num
+        &:nth-child({i})
+            border-bottom 0
+            background-color rgba(i*20,i*5,i*9,i*0.1)
+.box
+    color white
+    display flex
+    align-items center
+    justify-content center
+    nBgc(9)
