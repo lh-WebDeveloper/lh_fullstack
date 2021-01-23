@@ -1,4 +1,4 @@
-const name= "li";
+/* const name= "li";
 if(true){
     const name ="hi";
 }
@@ -14,3 +14,6 @@ for(const key in {a:1,b:2}){
 for(const value of[1,2,3,4,5]){
     console.log(value);
 }
+ */
+const age = 26;
+age = 36// TypeError
