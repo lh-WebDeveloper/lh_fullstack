@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #c1{ background:black;}
+    </style>
+</head>
+<body>
+    <canvas id="c1" width="400" height="400"></canvas>
+    <script>
+    var c1 = document.getElementById('c1');
+    var ctx = c1.getContext("2d");
+    
+    var img = new Image();
+    img.onload = function(){
+        ctx.drawImage(img,0,0);
+        var data = ctx.getImageData(0,0,img.width,img.height);
+        console.log(data);
+    };
+    img.src = './新年快乐1.png';
+
+    </script>
+</body>
+</html>
