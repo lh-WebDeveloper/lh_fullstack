@@ -1,0 +1,83 @@
+<!-- search -->
+<view class="search">
+    <input type="text" placeholder="输入搜索关键字"
+    value="{{keyword}}"
+    bindinput="doSearchinput"
+    bindconfirm="doSearch"/>
+    <image src="/images/search.svg" bindtap="doSearch"/>
+</view>
+<!-- slider -->
+<view class="slide">
+  <swiper indicator-active-color="#fff" autoplay="true" circular="true" duration="{{duration}}" interval="{{interval}}" indicator-dots="true">
+    <block wx:for="{{imgUrls}}" wx:key="index">
+      <swiper-item>
+        <image class="slide-image" src="{{item}}"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  </view>
+  <!-- notice -->
+  <view class="notice-box" wx:if="{{noticeList}}">
+    <view class="notice">
+      <image class="notice_icon" src="/images/notice.png"></image>
+      <swiper class="notice_swiper" vertical autoplay circular>
+        <navigator wx:for="{{noticeList.dataList}}" wx:key="id" url="/pages/notice/show?id={{item.id}}">
+          <swiper-item>
+            <view class="notice-item">{{item.title}}</view>
+          </swiper-item>
+        </navigator>
+         <swiper-item>
+            <view class="notice-item">{{item.title}}东哥叫我们去战斗</view>
+        </swiper-item>
+        </swiper>
+    </view>
+</view>
+<!-- list -->
+<view class="list">
+  <view class="list-box">
+      <view class="list-list" wx:for="{{list}}" wx:key="index">
+        <navigator url="">
+          <image src="{{item.url}}" />
+          <view class="list-name">
+            <text>"{{item.name}}"</text>
+          </view>
+        </navigator>    
+      </view>      
+    </view> 
+</view> 
+<view class="text">
+  <text>最近新品</text>
+</view>
+<!-- 分类展示 -->
+<view class="selected">
+    <view class="select-top">
+      <view class="select-top__small">
+        <navigator >
+          <image src="/images/5.jpg"></image>
+        </navigator>
+      </view>
+      <view class="select-top__small">
+        <navigator >
+          <image src="/images/6.jpg"></image>
+        </navigator>
+      </view>
+    </view>
+  </view>
+<view class="text">
+  <text>每日特价</text>
+</view>
+<!-- 分类展示 -->
+<view class="selected">
+    <view class="select-top">
+      <view class="select-top__small">
+        <navigator >
+          <image src="/images/7.jpg"></image>
+        </navigator>
+      </view>
+      <view class="select-top__small">
+        <navigator >
+          <image src="/images/8.jpg"></image>
+        </navigator>
+      </view>
+    </view>
+  </view>
