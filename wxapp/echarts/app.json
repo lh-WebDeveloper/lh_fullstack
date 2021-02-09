@@ -1,9 +1,9 @@
 {
     "pages": [
-        "pages/pie/pie",
+        "pages/line/line",
         "pages/bar/bar",
+        "pages/pie/pie",
         "pages/index/index"
-
     ],
     "window": {
         "navigationBarBackgroundColor": "#ffffff",
