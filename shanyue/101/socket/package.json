@@ -1,0 +1,17 @@
+{
+  "name": "socket",
+  "version": "1.0.0",
+  "description": "1. 安装node 的开发框架,express MVC\r     - 引入express require('express')\r     - app = express()中小应用适合用node\r     - http服务 简单,传输完成就断开的 简单协议\r     - app.get('/',(req,res)=>{\r         res.send('')\r         })\r     - 101 协议的跳转? 比较复杂,聊天室 websocket\r     不要断开,我要一直保持链接,websocket\r     - app.listen(:port)",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^3.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
