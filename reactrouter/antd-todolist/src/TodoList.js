@@ -4,6 +4,7 @@ import { Layout } from 'antd'; // 布局 header + main + footer
 import './TodoList.css' 
 import DataList from './components/DataList';
 import Form from './components/Form';
+
 const { Header, Content } = Layout
 
 // warning  这种写法是老写法
@@ -23,37 +24,34 @@ class TodoList extends Component {
       list: datas
     })
   }
-  // redux 解决这个问题
+  
   deleteItem(id) {
-    // console.log(id)
+    // console.log(id);
     let deleteIndex = datas.findIndex(item => {
-      return item.id === id
+        return item.id === id 
     })
-    datas.splice(deleteIndex, 1)
+    datas.splice(deleteIndex,1);
     this.setState({
-      list: datas
+        list: datas
     })
   }
-
   changeItem(id) {
-    let changeIndex = datas.findIndex(item => {
-      return item.id === id
-    })
-    datas[changeIndex].isComplete = !datas[changeIndex].isComplete
-    this.setState({
-      list: datas
-    })
+      let changeIndex = datas.findIndex(item => {
+          return item.id ===id
+      })
+      datas[changeIndex].isComplete = !datas[changeIndex].isComplete
+      this.setState({
+          list: datas
+      })
   }
-
   handleSearchItem(value) {
-    let newList = datas.filter(item => {
-      return item.content.indexOf(value) !== -1
-    })
-    this.setState({
-      list: newList
-    })
+      let newList = datas.filter(item => {
+          return item.content.indexOf(value) !== -1
+      })
+      this.setState({
+          list: newList
+      })
   }
-
   render() {
     return (
       <Layout className="todolist-layout">
@@ -63,9 +61,10 @@ class TodoList extends Component {
         </Header>
         <Content className="todolist-content">
           <Form searchItem={value=>this.handleSearchItem(value)}/>
-          <DataList list={this.state.list}
-          changeItem={id => this.changeItem(id)}
-          deleteItem={id => this.deleteItem(id)}/>
+          <DataList list={this.state.list} 
+          changeItem={id=>this.changeItem(id)}
+          deleteItem={id => this.deleteItem(id)}
+          />
         </Content>
       </Layout>
     )

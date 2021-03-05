@@ -9,13 +9,14 @@ import { List } from 'antd'; // List 框架熟练的表征
 import TodoItem from './TodoItem';
 
 class DataList extends Component {
+
+  //  redux  解决了这个问题
   deleteItem (id) {
     this.props.deleteItem(id);
   }
-  changeItem (id) {
-    this.props.changeItem(id);
+  changeItem(id) {
+      this.props.changeItem(id);
   }
-
   render() {
     let data = this.props.list
     return (
@@ -25,8 +26,8 @@ class DataList extends Component {
         renderItem= { item => (
           // item id, content, isComplete,  
           <List.Item>
-              <TodoItem  
-              changeItem={id => this.changeItem(id)}
+              <TodoItem
+              changeItem={id => this.changeItem(id)}  
               deleteItem={id => this.deleteItem(id)} {...item}/>
           </List.Item>
         )}// item 定制
