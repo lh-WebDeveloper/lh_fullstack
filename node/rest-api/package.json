@@ -1,0 +1,16 @@
+{
+  "name": "rest-api",
+  "version": "1.0.0",
+  "description": "前端和后端交流的接口\r     mongobd",
+  "main": "index.js",
+  "dependencies": {
+    "json-server": "^0.16.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "json-server db.json"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
