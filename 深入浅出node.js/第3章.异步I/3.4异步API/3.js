@@ -1,0 +1,19 @@
+//加入两个nextTick()的回调函数
+process.nextTick(function(){
+    console.log('nextTick延迟执行1');//2
+});
+process.nextTick(function(){
+    console.log('nextTicK延迟执行2');//3
+});
+//加入两个setTmmediate()的回调函数
+setImmediate(function(){
+    console.log('setTmmediate延迟执行1');//4
+    //进入下次循环
+    process.nextTick(function(){
+        console.log('强势插入');//5
+    });
+});
+setImmediate(function(){
+    console.log('setTmmediate延迟执行2');//6
+});
+console.log('正常执行');//1
