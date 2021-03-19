@@ -1,0 +1,59 @@
+<!--index.wxml-->
+<view class="main">
+  <swiper indicator-active-color="#fff" autoplay="true" circular="true" duration="{{duration}}" interval="{{interval}}" indicator-dots="true">
+    <block wx:for="{{imgUrls}}" wx:key="index">
+      <swiper-item>
+        <image class="slide-image" src="{{item}}"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="selected">
+    <view class="select-title">
+      <text>世界很大,我想去看看</text>
+    </view>
+    <view class="select-top">
+      <view class="select-top__small">
+        <navigator url="../detail/detail">
+          <image src="/image/s1.jpg"></image>
+        </navigator>
+      </view>
+      <view class="select-top__small">
+        <navigator url="../detail/detail">
+          <image src="/image/s2.jpg"></image>
+        </navigator>
+      </view>
+    </view>
+    <view >
+ <video style="width: 100%;height=400px;margin:1px;" src="https://media.qyer.com/video/source/20181108/1541666139078">
+  " binderror="videoErrorCallback"></video>
+</view>
+  </view>
+
+  <view class="newest">
+    <view class="select-title">
+      <text>打卡圣地</text>
+    </view>
+    <view class="newest-box">
+      <view class="newest-list" wx:for="{{newsList}}" wx:key="index">
+        <navigator url="">
+          <image src="{{item.url}}" />
+          <view class="newest-name">
+            <text>"{{item.name}}"</text>
+          </view>
+        </navigator>
+      </view>
+
+      <!-- <view class="newest-list">
+        <navigator url="">
+          <image src="/image/s4.png" />
+          <view class="newest-name">
+            <text>瓜子 100g</text>
+          </view>
+          <view class="newest-price">
+            <text>¥ 0.01</text>
+          </view>
+        </navigator>
+      </view> -->
+    </view>
+  </view>
+</view>
