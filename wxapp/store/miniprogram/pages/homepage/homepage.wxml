@@ -12,12 +12,10 @@
   <view class="type-container">
     <view class="type-item" 
     wx:for="{{typeCat}}"
-    wx:key="id"
-    >
+    wx:key="id">
       <view data-id="{{item.id}}"
        class="type-name {{activeTypeId === item.id? 'type-item-on':''}}"
-       bindtap="typeSwitch"
-       >
+       bindtap="typeSwitch">
         {{item.name}}
       </view>
     </view>

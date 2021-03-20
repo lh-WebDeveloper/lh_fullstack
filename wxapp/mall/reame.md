@@ -24,5 +24,21 @@
 
 - 总结一下搜索体验 把自己当小白
   placeholder + padding-left + bindinput + bindConfirm + search 图标
-  
-  
+
+
+- 业务
+    1. 搜索
+    2. tabbar(前端)条件筛选业务(后端查询参数? order=price)
+    3. 列表业务 wx:for
+    data:{
+      goods:[]
+    }
+    apifm 
+    /goods?order=&page=&{n}&size=20&keyword=addidas []
+
+
+- 页面的生命周期
+  谁先发生,适合做什么
+  onload 加载资源 wxml, wxss js 最少
+  onShow wxml+wxss 渲染,js还没有执行完 还不能交互的
+  onReady
