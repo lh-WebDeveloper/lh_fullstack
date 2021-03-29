@@ -3,6 +3,7 @@
 import express from 'express';
 const bodyParser =require('body-parser');
 import postRouter from '../post/post.router'
+import {defaultErrorHandler} from './app.middleware';
 const app = express();
 app.use(bodyParser.urlencoded());
 //app 处于伺服状态 eventEmitter 
@@ -14,4 +15,6 @@ app.use(
     postRouter,
     //用户路由
 )
+//处理各种错误
+app.use(defaultErrorHandler);
 export default app;
