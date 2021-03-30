@@ -9,37 +9,37 @@ export const defaultErrorHandler = (
         console.log(error.message, '------------')
     }
     let statusCode:number,message:string;
-    /**
-     * 处理异常
-     */
+    /* 处理异常 */
     switch(error.message){
         case 'NAME_IS_REQUIRED':
             statusCode=400;
-            message="请提供用户名";
+            message = '请提供用户名';
             break;
         case 'PASSWORD_IS_REQUIRED':
             statusCode=400;
-            message="请提供密码";
+            message = '请提供密码';
             break;
-        case 'USER_ALREADY_EXSIT':
+        case 'USER_ALREADY_EXIST':
             statusCode=409;
-            message="用户名已被占用";
+            message = '用户名已被占用';
             break;
         case 'USER_DOES_NOT_EXIT':
             statusCode=400;
-            message="用户不存在";
+            message = '用户不存在';
         case 'UNAUTHORIZED':
-            statusCode=401;
-            message="请先登录";
-        case 'USER_DOES_NOT_DWN_RESOURCE':
+            statusCode = 401;
+            message = "请先登录";
+        case 'USER_DOES_NOT_OWN_RESOURCE':
             statusCode=403;
-            message="你不能处理该内容";
+            message='您不能访问';
+            break;
         case 'NOT_FOUND':
             statusCode=404;
-            message="未找到";
+            message="没找到";
+            break;
         default:
             statusCode=500;
-            message="运维小哥哥正在...........";
+            message="服务器维修ing....";
             break;
     }
     response.status(statusCode).send({message})

@@ -7,7 +7,6 @@ export const store = async(
   console.log(request.body, '/////////////');
   const { title, content } = request.body
   // 存  -> 数据存储服务service
-  console.log(title, content , '-------------')
   const data = await createPost({title, content})
   response.status(201).send('保存成功')
 }

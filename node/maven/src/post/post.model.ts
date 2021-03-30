@@ -1,7 +1,6 @@
-//对数据库的模型定义
+// 对数据库的模型定义
 export class PostModel{
-    id?:number;
+    id?: number;
     title:string;
     content?:string;
-
 }

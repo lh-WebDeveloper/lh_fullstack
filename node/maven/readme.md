@@ -29,3 +29,11 @@ CREATE TABLE `post` (
 
 - mysql 先建表 后操作 关系型数据库 SQL
     mongodb 先上车 后补票 文件型数据库 NOSQL
+
+ - user业务
+    1. user.router.ts 入口 POST /register
+    2. user.contriller.ts  用户名或密码不为空,这是绝对不能存的
+    会带来数据库的问题,用户端 管理 数据库
+    3. user.service.ts 数据
+    4. user.middleware.ts 检测是否有存在的用户名 ? 注册 POST /register checkIsNameExist next() register
+    
