@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">节流提交</button> <!-- 设置表单 -->
+    <script>
+        function success(e){
+            console.log('提交成功')//设置success函数，并且打印结果
+        }
+        //节流函数
+        const throttle =(fn,delay)=>{//1 创建节流函数throttle
+            let flag=true//5 通过闭包保存一个标记
+            return (...args)=>{//4
+                if(!flag) return  // 在函数开头判断标记是否为true，不为true则return
+                flag=false//6  立即设置为false
+            setTimeout(()=>{//3 将外部传入的函数的执行放在setTimeout中
+                fn.apply(this,args) // 最后在setTimeout执行完毕后再把标记设置为true(关键)表示可以执行下一次循环了。
+                    flag=true               //当定时器没有执行的时候标记永远是false，在开头被return掉
+                },delay)
+            }
+        }
+        const oThrottle=throttle(success,2000)//2 设置间隔2秒执行一次  success被throttle修饰为oThrottle 然后调用
+        let btn=document.getElementById('btn')
+        btn.addEventListener('click',oThrottle) // 节流 click调用oThrottle
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">防抖提交</button><!-- 设置表单 -->
+    <script>
+        function success(e){
+            console.log('提交成功')//设置success函数，并且打印结果
+        }
+        // 防抖函数
+        const debounce=(fn,delay)=>{// 1 创建防抖函数debounce
+            let timer=null  // 创建一个标记用来存放定时器的返回值
+            return (...args)=>{//4  进行解构
+            clearTimeout(timer)//5  每当用户输入的时候把前一个setTimeout 清除掉
+            timer = setTimeout(()=>{//3 然后又创建一个新的setTimeout, 这样就能保证输入字符后的 interval 间隔内如果还有字符输入的话,就不会执行fn 函数
+                    fn.apply(this,args)//6 绑定this作用域和接受success参数
+                },delay)
+            }
+        }
+        const oDebounce=debounce(success,2000)//2 设置间隔2秒执行一次  success被debounce修饰为oDebounce 然后调用
+        let btn=document.getElementById('btn')
+        btn.addEventListener('click',oDebounce) // 防抖 click调用oDebounce
+    </script>
+</body>
+</html>
