@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        /* 父元素中设置font-size: 0，在子元素上重置正确的font-size */
+      .container {
+        width: 800px;
+        height: 200px;
+        /* font-size: 0; */
+      }
+     /*  为子元素设置float:left */
+      .left {
+        float: left;
+        font-size: 14px;
+        background: red;
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+      }
+
+      .right {
+        float: left;
+        font-size: 14px;
+        background: blue;
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+      <!-- 方法一 将子元素标签的结束符和下一个标签的开始符写在同一行或把所有子标签写在同一行 -->
+    <!-- <div class="container">
+      <div class="left">左 </div><div class="right">右</div>
+    </div> -->
+    <div class="container">
+        <div class="left">左 </div>
+        <div class="right">右</div>
+      </div>
+  </body>
+</html>
