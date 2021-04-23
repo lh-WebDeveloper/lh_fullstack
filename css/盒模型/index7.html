@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        .parent {
+            border: solid 1px blue;
+            width: 300px;
+            position: absolute;
+        }
+        .parent > div {
+            border: solid 1px red;
+            height: 100px;
+            width: 300px;
+        }
+        .absolute {
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent" style="margin-left: 200px;">
+        <div>默认流：position=static</div>
+        <div class="absolute">position=absolute, left=100px, top=100px</div>
+        <div>默认流：position=static</div>
+    </div>
+    <div class="parent" style="margin-left: 200px;position: relative;">
+        <div>默认流：position=static</div>
+        <div class="absolute">position=absolute, left=100px, top=100px</div>
+        <div>默认流：position=static</div>
+    </div>
+</body>
+</html>
