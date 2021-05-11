@@ -7,7 +7,16 @@
 `GET /home HTTP/1.1`
 也就是方法 + 路径 + http版本。
 
-对于响应报文来说，起始行一般长这个样:
+首部行常用的Header
+User-Agent: 浏览器的版本
+Content-Type: 请求体数据类型 text/plain text/html application/json
+Content-Length: 请求体的长度,单位:字节
+Content-Encoding: 请求体的编码格式 gzip  deflate
+Accept-Encoding: 告诉对方我方接受的编码格式
+Referer: 请求来源
+Cache-Control: 缓存机制 no-carche,max-age=10
+
+对于响应报文来说，起始行一般长这个样: 
 `HTTP/1.1 200 OK`
 响应报文的起始行也叫做状态行。由http版本、状态码和原因三部分组成。
 
