@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bargraph {
+          margin: 0 auto;   
+          display: grid;
+          width: 250px;
+          height: 200px;
+          padding: 10px;
+          transform: scaleY(3);
+          grid-template-columns: repeat(5, 20%);
+        }
+        
+        .bargraph div {
+          margin: 0 5px;
+        }
+        
+        .bargraph div:nth-child(1) {
+          /** 从上到下(to bottom 默认，可不写)，75% 全透明， 25% 红色，  **/  
+          background: linear-gradient(to bottom, transparent 75%, red 0);
+        }
+        
+        .bargraph div:nth-child(2) {
+          background: linear-gradient(transparent 74%, yellow 0);
+        }
+        
+        .bargraph div:nth-child(3) {
+          background: linear-gradient(transparent 60%, blue 0);
+        }
+        
+        .bargraph div:nth-child(4) {
+          background: linear-gradient(transparent 55%, green 0);
+        }
+        
+        .bargraph div:nth-child(5) {
+          /** 也可以多种颜色渐变  **/    
+          background: linear-gradient(transparent 32%, #37c 0, #37c 63%, #3c7 0);
+        }
+        </style>
+        </head>
+        <body>
+            <div class="bargraph">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>  
+        </body>
+        </html>
+        
