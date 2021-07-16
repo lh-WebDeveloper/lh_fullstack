@@ -1,13 +1,14 @@
-// 利用indexOf检测元素在数组中第一次出现的位置是否和元素现在的位置相等，
-// 如果不等则说明该元素是重复元素
-function unique(arr) {
-    if (!Array.isArray(arr)) {
-        console.log('type error!')
-        return
-    }
-    return Array.prototype.filter.call(arr, function(item, index){
-        return arr.indexOf(item) === index;
+let arr = [12,1,12,3,1,88,66,9,66];
+function unique(ary) {
+    let a=ary.sort(function(a,b){
+        return a-b;
     });
-}
-
-
+    for(let i=0;i<a.length;i++){
+        if(a[i]===a[i+1]){
+            a.splice(i+1,1);
+            i--;
+        }
+    }
+    return a;
+   }
+   console.log(unique(arr))
